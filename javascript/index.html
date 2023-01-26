@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-200">
+
+    <div class="mx-auto py-4 grid grid-cols-1 gap-4 w-[1600px] ">
+
+        <canvas id="canvas" class="w-[1600px] h-[800px] mx-auto bg-teal-100" width="1600" height="800"></canvas>
+        
+        <div class="grid grid-cols-4 gap-4">
+            <div>
+                <label class="block">Dizilim</label>
+                <select id="type" class="w-full">
+                    <option value="line">Line</option>
+                    <option value="square">Square</option> 
+                    <option value="deka">Deka 10x</option> 
+                    <option value="circle">Circle</option> 
+                    <option value="circle_auto">Circle Auto</option> 
+                    <option value="triangle">Triangle</option>
+                </select>
+            </div>
+            <div>
+                <label class="block">Birim Sayısı <span class="text-rose-500 font-bold">6</span></label>
+                <input id="count" type="range" min="1" max="400" value="6" class="w-full">
+            </div> 
+            <div>
+                <label class="block">Radius <span class="text-rose-500 font-bold">10</span></label>
+                <input id="radius" type="range" min="10" max="100" value="10" class="w-full">
+            </div> 
+            <div>
+                <label class="block">Rotate <span class="text-rose-500 font-bold">0°</span></label>
+                <input id="rotate" type="range" min="0" max="360" value="0" class="w-full">
+            </div> 
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
