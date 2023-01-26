@@ -355,8 +355,7 @@ const draw = () => {
     // draw circles on formation locations
     for(let i = 0; i < formation.location.length; i++){
         ctx.beginPath();
-        if(unitImage && unitImage.complete){
-            // draw image on location with 60x60 size and rotate
+        if(unitImage && unitImage.complete && unitImage.naturalHeight !== 0){
             ctx.save();
             ctx.translate(
                 formation.location[i].x + centerX,
@@ -370,18 +369,17 @@ const draw = () => {
                 60,
                 60
             );
-            ctx.restore(); 
-
+            ctx.restore();  
         }
         else{
             ctx.arc(
                 formation.location[i].x + centerX,
                 formation.location[i].y + centerY,
-                30,
+                15,
                 0, 
                 Math.PI * 2
             );
-            ctx.strokeStyle = 'red';
+            ctx.strokeStyle = 'white';
             ctx.stroke();
         }
         
@@ -424,10 +422,14 @@ elRotate.addEventListener('input', () => {
 
 
 const unitImage = new Image();
-unitImage.src = './handgun_idle.png';
 unitImage.onload = () => {
     draw();
 };
+unitImage.onerror = () => {
+    draw();
+}
+unitImage.src = './handgun_idle.png';
+
 
 
  
